@@ -5,12 +5,12 @@ import pyperclip
 sleep(1)
 global x, y
 
-position = pt.locateOnScreen("whatsapp/smilie.png", confidence=.6)
+position = pt.locateOnScreen("smilie.png", confidence=.6)
 x = position[0]
 y = position[1]
 
 def get_received_message():
-    position = pt.locateOnScreen("whatsapp/smilie.png", confidence=.6)
+    position = pt.locateOnScreen("smilie.png", confidence=.6)
     x = position[0]
     y = position[1]
     pt.moveTo(x+100, y-45, duration=0.5)
@@ -24,7 +24,7 @@ def get_received_message():
     return received_message
 
 def send_message(message):
-    position = pt.locateOnScreen("whatsapp/smilie.png", confidence=.6)
+    position = pt.locateOnScreen("smilie.png", confidence=.6)
     x = position[0]
     y = position[1]
     pt.moveTo(x+100, y+50, duration=0.5)
@@ -46,7 +46,7 @@ def process_response(message):
 def check_for_unread_messages():
     while True:
         try:
-            position = pt.locateOnScreen("whatsapp/unread.png", confidence = 0.7)
+            position = pt.locateOnScreen("unread.png", confidence = 0.7)
 
             if position is not None:
                 pt.moveTo(position)
